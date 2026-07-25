@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICEBACK</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- HOME SCREEN -->
+  <div id="homeScreen">
+    <div class="home-header">
+      <img src="https://i.ibb.co/C5Gmwdwq" alt="ICEBACK" class="home-avatar">
+      <span class="home-title">ICEBACK</span>
+      <span class="home-sub">Safari AI</span>
+    </div>
+    <div class="home-body">
+      <div class="recent-section">
+        <div class="section-header">
+          <span>Recent Chats</span>
+          <button id="clearChatsBtn" style="background:none;border:none;color:#8e8e93;font-size:13px;cursor:pointer;">Clear All</button>
+        </div>
+        <div id="recentChatsList"></div>
+      </div>
+      <button id="newChatBtn" class="new-chat-btn"><i class="fas fa-plus-circle"></i> New Chat</button>
+      <div class="whats-new-section">
+        <button id="whatsNewToggle" class="whats-new-toggle"><i class="fas fa-bullhorn"></i> What's New <i class="fas fa-chevron-down"></i></button>
+        <div id="whatsNewContent" style="display:none;"></div>
+      </div>
+      <!-- NEW: Status / Commands -->
+      <div class="status-section">
+        <button id="statusToggle" class="status-toggle"><i class="fas fa-info-circle"></i> Status / Commands <i class="fas fa-chevron-down"></i></button>
+        <div id="statusContent" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE CARD -->
+  <div id="profileCard" style="display:none;">
+    <div class="profile-header" style="background: linear-gradient(135deg, #00A86B, #007A4D);">
+      <button id="backToHomeFromProfile" style="background:none;border:none;color:white;font-size:20px;position:absolute;top:12px;left:16px;cursor:pointer;"><i class="fas fa-arrow-left"></i></button>
+      <img src="https://i.ibb.co/C5Gmwdwq" alt="Safari AI" class="avatar">
+      <h1>safari Ai</h1>
+      <p class="tagline">SAFARI AI CREATED BY ICEBACK MASTER TECH</p>
+      <div class="action-buttons">
+        <button id="messageBtn"><i class="fas fa-comment"></i> Message</button>
+        <button id="shareBtn"><i class="fas fa-share-alt"></i> Share</button>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> safaritechcompany@gmail.com</p>
+        <p><i class="fas fa-user"></i> icebackmaster@gmail.com</p>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item" data-tool="chat"><i class="fas fa-robot"></i> AI Chat</div>
+      <div class="feature-item" data-tool="image-gen"><i class="fas fa-image"></i> Image Generator</div>
+      <div class="feature-item" data-tool="image-edit"><i class="fas fa-edit"></i> Image Editor</div>
+      <div class="feature-item" data-tool="pdf"><i class="fas fa-file-pdf"></i> PDF Chat</div>
+      <div class="feature-item" data-tool="translate"><i class="fas fa-language"></i> Translator</div>
+      <div class="feature-item" data-tool="writer"><i class="fas fa-pen"></i> AI Writer</div>
+      <div class="feature-item" data-tool="code"><i class="fas fa-code"></i> Code Generator</div>
+      <div class="feature-item" data-tool="search"><i class="fas fa-search"></i> AI Search</div>
+      <div class="feature-item" data-tool="voice"><i class="fas fa-microphone"></i> Voice Chat</div>
+      <div class="feature-item" data-tool="tts"><i class="fas fa-volume-up"></i> Text to Speech</div>
+      <div class="feature-item" data-tool="ocr"><i class="fas fa-camera"></i> OCR</div>
+      <div class="feature-item" data-tool="summarize"><i class="fas fa-file-alt"></i> AI Summarizer</div>
+      <div class="feature-item" data-tool="homework"><i class="fas fa-graduation-cap"></i> Homework Helper</div>
+      <div class="feature-item" data-tool="math"><i class="fas fa-calculator"></i> Math Solver</div>
+      <div class="feature-item" data-tool="logo"><i class="fas fa-paint-brush"></i> Logo Generator</div>
+      <div class="feature-item" data-tool="video"><i class="fas fa-video"></i> Video Prompt Creator</div>
+      <div class="feature-item" data-tool="video-gen"><i class="fas fa-film"></i> Text to Video</div>
+      <div class="feature-item" data-tool="ad-gen"><i class="fas fa-bullhorn"></i> Ad Generator</div>
+    </div>
+    <div style="padding: 0 20px 16px; text-align: center;">
+      <button id="moreToolsBtn" style="background: none; border: 1px solid #00A86B; color: #00A86B; padding: 8px 20px; border-radius: 30px; font-weight: 600; cursor: pointer;">
+        <i class="fas fa-chevron-down"></i> More Tools
+      </button>
+      <div id="moreToolsList" style="display: none; margin-top: 12px; background: #f8f9fc; border-radius: 16px; padding: 12px; text-align: left;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="padding: 8px; background: #fff; border-radius: 10px; border: 1px solid #e9ecef; color: #8e8e93;"><i class="fas fa-user-astronaut"></i> AI Presenter <span style="color: #ff9500; font-size: 12px;">⚠ Maintenance</span></div>
+          <div style="padding: 8px; background: #fff; border-radius: 10px; border: 1px solid #e9ecef; color: #8e8e93;"><i class="fas fa-scissors"></i> Video Editor <span style="color: #ff9500; font-size: 12px;">⚠ Maintenance</span></div>
+          <div style="padding: 8px; background: #fff; border-radius: 10px; border: 1px solid #e9ecef; color: #8e8e93;"><i class="fas fa-music"></i> Music Generator <span style="color: #ff9500; font-size: 12px;">⚠ Maintenance</span></div>
+          <div style="padding: 8px; background: #fff; border-radius: 10px; border: 1px solid #e9ecef; color: #8e8e93;"><i class="fas fa-paint-roller"></i> Style Transfer <span style="color: #ff9500; font-size: 12px;">⚠ Maintenance</span></div>
+          <div style="padding: 8px; background: #fff; border-radius: 10px; border: 1px solid #e9ecef; color: #8e8e93;"><i class="fas fa-play-circle"></i> AI Ad Script <span style="color: #ff9500; font-size: 12px;">⚠ Maintenance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT INTERFACE -->
+  <div id="chatInterface" style="display:none;">
+    <div class="chat-header" style="background: linear-gradient(135deg, #00A86B, #007A4D);">
+      <button id="backBtn"><i class="fas fa-arrow-left"></i></button>
+      <img src="https://i.ibb.co/C5Gmwdwq" alt="AI" class="chat-avatar">
+      <span id="chatTitle">Safari AI</span>
+    </div>
+    <div id="chatMessages"></div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Ask Safari AI anything...">
+      <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+      <div class="attachment-buttons">
+        <button id="photoBtn"><i class="fas fa-camera"></i></button>
+        <button id="fileBtn"><i class="fas fa-file"></i></button>
+        <button id="voiceBtn"><i class="fas fa-microphone"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+  </html>
