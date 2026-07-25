@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ICEBACK Safari AI",
+  "version": "2.2",
+  "description": "Your all-in-one AI assistant by ICEBACK MASTER TECH",
+  "permissions": ["storage", "activeTab", "clipboardWrite", "downloads"],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://api.deepseek.com/*",
+    "https://openrouter.ai/*",
+    "https://api.fal.ai/*",
+    "https://api.deepgram.com/*",
+    "https://api.assemblyai.com/*",
+    "https://api.openweathermap.org/*",
+    "https://iovruumufvrbzyorvntv.supabase.co/*",
+    "https://api.heygen.com/*",
+    "https://api.d-id.com/*",
+    "https://api.shotstack.io/*",
+    "https://api.creatomate.com/*",
+    "https://api.elevenlabs.io/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
