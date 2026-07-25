@@ -1,0 +1,46 @@
+/* ---------- STATUS / COMMANDS ---------- */
+.status-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.status-toggle {
+  background: none;
+  border: none;
+  color: #1c1c1e;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.status-toggle i {
+  color: #00A86B;
+}
+#statusContent {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: #f8f9fc;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+.command-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 14px;
+  color: #1c1c1e;
+}
+.command-item:last-child {
+  border-bottom: none;
+}
+.command-item .cmd {
+  font-weight: 600;
+  color: #00A86B;
+}
+.command-item .desc {
+  color: #8e8e93;
+  margin-left: 8px;
+}
